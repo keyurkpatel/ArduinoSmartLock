@@ -7,7 +7,7 @@ Repository Contents
 ============
 Here's where you'll provide a map of all the top-level contents (where applicable):
 
-* **/src** - The code file
+* **/smartlock.ino** - The code file
 * **/hardware** - List and description of hardware components
 * **/Design and Build info** - Explains the working of the project
 * **/img** - Images for reference
