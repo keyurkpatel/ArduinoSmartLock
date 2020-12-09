@@ -1,0 +1,8 @@
+The hardware requirements are as follows:
+•	Arduino Uno – The Arduino works as the controlling system, the code runs on it, input from sensors is taken and evaluated, actuators are sent instructions to perform particular task. Other versions of Arduino can be used as long as the wire connections are modified accordingly. Can be purchased from various sources including: 
+•	RFID sensor – The RFID reader is the sensor that reads the value from the RFID cards and tags. RFID works on radio frequencies; therefore, they require to be in close contact with the cards, ensuring that it does not pick up any card or tags readings from far away.
+•	RFID tags – These tags can be little FOPs or Cards; they hold a specific alpha-numeric value in them which work as unique identifiers for them.  
+•	Relay board – A relay board is a set of relay switches that can work independently. A single relay switch works exactly like switch for a light. It connects the power source and the actuator when turned on. These relay switches can be toggled using electrical signals sent to them from Arduino.
+•	Solenoid lock – These are metal locks that work as latches; they can be toggled using electric signals as they work on the concept of electro-magnetism. This lock is chosen so that it can be completely controlled by Arduino.
+•	Buzzer and LED – These are basic actuators, used to send audio and visual confirmations of the process state, for instance the LED turns on when the lock is opened.
+•	Other basic components – Jumper wires for connecting different pieces of hardware, 12V battery to control the solenoid lock and power cable for Arduino.
