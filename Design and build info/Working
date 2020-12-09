@@ -1,0 +1,31 @@
+The connections for this project can be a little confusing as they are components that use multiple wires and connections. 
+To make it easier, the connections, programming and testing was done for each component individually. 
+
+Firstly, the RFID reader was connected to Arduino as it is the main component of the project. 
+The reader sends an alpha-numeric value to the Arduino when a RFID card or FOP is tapped onto the reader. 
+This alpha-numeric code is then compared with the codes that have been stored in code as a static value. 
+If the code matches exactly then the door is opened, if not then the door is not opened. Once this interfacing was completed, then other components were added. 
+
+Secondly, the LCD (16x2) screen is interfaced to the Arduino, since it occupies highest number of data pins. 
+The method of sending string input to LCD is as simple as printing something on the serial monitor, for instance lcd.print("Access Denied :("); . 
+When the correct RFID card is scanned on the RFID reader, a message saying "Authorized access” is displayed on the screen. 
+If wrong card is scanned, then “Access Denied” message is displayed.
+
+Once the RFID and LCD were working, the basic code of the project could be tested, which means correct RFID cards were being identified. 
+This indicated that as a next step we could interface the solenoid lock. 
+The lock is a little tricky to be interface. 
+The lock works on 12V signals. 
+Arduino by default can only send 3.3V to 5V of signals, which means that the regular digital output pins on Arduino are not capable of controlling the lock. 
+For this, a 12V battery was used, but the battery cannot be directly connected to the lock, as there would be no control mechanism in place. 
+Therefore, relay board was used. A relay can connect the power source (12V battery) to the actuator(lock). 
+The interesting fact of relay is that it can be toggled using a 5V signal from Arduino. 
+To simplify, when the door is required to be opened, Arduino sends a 5V signal to relay, the relay in turn completes the connect between the 12V battery and the solenoid lock, 
+resulting in the lock being open. When the lock is to be closed an invert signal is send to relay, resulting in the disconnect of battery and lock. 
+This ensures that whenever Arduino sends a signal, the lock will toggle via the relay. 
+In this project a relay board is used, as it makes the connections easy, in real world, a single relay would be used, this might require some changes in the connections.
+
+Finally, the buzzer and LED can be interfaced. 
+The job of LED and buzzer is solely to provide Audio-Visual confirmation of access approval or denial. 
+The LED is used to indicate the approval, whenever a correct RFID card is scanned, the LED is turned on. 
+On the other hand, the buzzer is used was indicating unauthorized RFID card by sending tone signals. 
+Which means, whenever a wrong RFID card is scanned, the buzzer will beep, working as an alarm.
